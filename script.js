@@ -83,7 +83,7 @@ function salvarDados() {
   window.addEventListener('load', preencherTabela);
    
   function limparTabela() {
-    document.getElementById("tabela").innerHTML = "<thead><tr><th>Alimento</th><th>Quantidade</th><th>horário</th></tr></thead><tbody></tbody>";
+    document.getElementById("tabela").innerHTML = "<thead><tr><th>Alimento</th><th>Quantidade</th><th>Horário</th></tr></thead><tbody></tbody>";
     localStorage.clear();
 }
 
