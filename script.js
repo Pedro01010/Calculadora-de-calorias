@@ -23,11 +23,14 @@ function envia(){
     let hora =`${date.getHours()}:${data.getMinutes()}`
     let tabela = document.getElementById('tabela').getElementsByTagName('tbody')[0]
     
-   
-        
+   if(alimento == 0 || quantidade ==0){
+    alert('Tente denovo. Adicione os itens')
+    document.getElementById("tabela").innerHTML = "<thead><tr><th>Alimento</th><th>Quantidade</th><th>Horário</th></tr></thead><tbody></tbody>";
+    
+   }else{
     tipo.push(alimento) 
     qtd.push(quantidade)
-    
+   }
   
     let novaLinha = tabela.insertRow()
     let celulaAlimento = novaLinha.insertCell(0)
@@ -53,7 +56,8 @@ function salvarDados() {
       const alimento = linha.cells[0].textContent;
       const quantidade = linha.cells[1].textContent;
       const hora = linha.cells[2].textContent
-      dados.push({ alimento, quantidade, hora });
+     
+      dados.push({ alimento, quantidade, hora, });
     });
   
     localStorage.setItem('dadosTabela', JSON.stringify(dados));
@@ -74,7 +78,17 @@ function salvarDados() {
       novaLinha.insertCell().textContent = dado.alimento;
       novaLinha.insertCell().textContent = dado.quantidade;
       novaLinha.insertCell().textContent = dado.hora;
+      
     });
+  }
+
+
+  function calcular() {
+    let somaQtd = 0;
+    for (let i = 0; i < qtd.length; i++) {
+      somaQtd += parseInt(qtd[i]);
+    }
+    res.innerHTML = `A caloria média está em: ${somaQtd * 4} <small>(cal)</small>`;
   }
   
   const btnAdicionar = document.querySelector('#btnadc');
@@ -83,6 +97,7 @@ function salvarDados() {
   window.addEventListener('load', preencherTabela);
    
   function limparTabela() {
+   
     document.getElementById("tabela").innerHTML = "<thead><tr><th>Alimento</th><th>Quantidade</th><th>Horário</th></tr></thead><tbody></tbody>";
     localStorage.clear();
 }

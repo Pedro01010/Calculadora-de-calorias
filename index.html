@@ -19,7 +19,7 @@
     <Section class="primeiro">
         <div class="cont">
            <h1 id="alimentos">Alimentos(tipo)</h1>
-            <input type="text" placeholder="Tipo" name="alimentos" id="txtali"></input>
+            <input type="text" placeholder="Tipo" name="alimentos" id="txtali" pattern="^[A-Za-z]+$" ></input>
             <h1 class="quantidade">Quantidade(g)</h1>
             <input type="number" placeholder="Qtd"name="quantidade" id="txtqtd">
         </div>
@@ -27,7 +27,7 @@
           <input id="btnadc" type="button" value="Adicione" style= "margin-bottom: 10px; border-radius: 5px; height: 30px; background-color: rgb(37, 25, 36); color: white; width: 80px; border: 1px solid black;" onclick="envia()">
          
         </Section>
-        <table id="tabela" style="border: 2px solid black; height: 200px ; width: 500px; text-align: center;  ">
+        <table id="tabela" style="border: 2px solid black; height: auto ; width: 500px; text-align: center;  ">
             <thead>
               <tr>
                 <th>Alimento</th>
@@ -39,6 +39,11 @@
             </tbody>
           </table>
           <input type="button" value="Limpar" style= "margin-top: 10px; border-radius: 5px; height: 30px; background-color: rgb(27, 22, 27); color: white; width: 80px; border: 1px solid black;" onclick="limparTabela()">
+          <input id="btncalc" type="button" value="Calcular"  style= "margin-top: 20px; border-radius: 5px; height: 30px; background-color: rgb(27, 22, 27); color: white; width: 80px; border: 1px solid black;" onclick="calcular()">
+          <div id="res" style="font-size: 30px; margin-top: 20px;">
+
+
+          </div>
        <script src="script.js" >
         
        </script>
