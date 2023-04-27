@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora de calorias</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <div id="horaum">
+
+    </div>
+    <h1 class="title">
+        Calcule sua caloria diária <br>
+        %
+    </h1>
+    <Section class="primeiro">
+        <div class="cont">
+           <h1 id="alimentos">Alimentos(tipo)</h1>
+            <input type="text" placeholder="Tipo" name="alimentos" id="txtali"></input>
+            <h1 class="quantidade">Quantidade(g)</h1>
+            <input type="number" placeholder="Qtd"name="quantidade" id="txtqtd">
+        </div>
+        
+          <input id="btnadc" type="button" value="Adicione" style= "margin-bottom: 10px; border-radius: 5px; height: 30px; background-color: rgb(37, 25, 36); color: white; width: 80px; border: 1px solid black;" onclick="envia()">
+         
+        </Section>
+        <table id="tabela" style="border: 2px solid black; height: 200px ; width: 500px; text-align: center;  ">
+            <thead>
+              <tr>
+                <th>Alimento</th>
+                <th>Quantidade</th>
+                <th>Horário</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <input type="button" value="Limpar" style= "margin-top: 10px; border-radius: 5px; height: 30px; background-color: rgb(27, 22, 27); color: white; width: 80px; border: 1px solid black;" onclick="limparTabela()">
+       <script src="script.js" >
+        
+       </script>
+      
+</body>
+</html>
